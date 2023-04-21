@@ -96,12 +96,11 @@ export default {
       try {
         this.isFetching = true
         await this.articleStore.fetchSummary(this.article.url)
-
-        this.history = [this.article, ...this.history]
         this.article = {
           ...this.article,
           summary: this.articleStore.getSummary
         }
+        this.history = [this.article, ...this.history]
         this.isFetching = false
         localStorage.setItem('articles', JSON.stringify(this.history))
       } catch (e) {
