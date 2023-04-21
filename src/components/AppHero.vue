@@ -2,9 +2,7 @@
   <header class="w-full flex justify-center items-center flex-col">
     <nav class="flex justify-between items-center w-full mb-10 pt-3">
       <img src="../assets/logo.svg" alt="sumz_logo" class="w-28 object-contain" />
-      <button type="button" @click.prevent="window.open('www.google.com')" class="black_btn">
-        GitHub
-      </button>
+      <button type="button" @click="redirectToGithub" class="black_btn">GitHub</button>
     </nav>
     <h1 class="head_text">
       Summarize Article with <br class="max-md:hidden" />
@@ -19,6 +17,11 @@
 
 <script>
 export default {
-  name: 'AppHero'
+  name: 'AppHero',
+  methods: {
+    redirectToGithub() {
+      window.open('https://github.com/felix123136/ai-summarizer')
+    }
+  }
 }
 </script>

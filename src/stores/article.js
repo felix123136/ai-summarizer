@@ -24,7 +24,6 @@ export const useArticleStore = defineStore('article', {
         options
       )
       const data = await response.json()
-      console.log(data)
       this.summary = data.summary
     }
   }
